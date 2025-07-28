@@ -14,6 +14,7 @@ import {
   Calendar,
   MapPin,
 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 // Mock data for orders
 const mockOrders = [
@@ -128,6 +129,7 @@ function MyOrdersPageDesktop() {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedOrder, setExpandedOrder] = useState(null);
+  const router = useRouter();
 
   const filteredOrders = mockOrders.filter((order) => {
     const matchesFilter =
@@ -274,7 +276,7 @@ function MyOrdersPageDesktop() {
 
                     {/* Quick Actions */}
                     <div className="flex items-center gap-4 mb-8">
-                      <button className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-200 font-semibold">
+                      <button onClick={() => router.push(`/tracking/${order.id}`)} className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-200 font-semibold">
                         <Eye size={16} />
                         View Details
                       </button>
@@ -432,7 +434,8 @@ function MyOrdersPageMobile() {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedOrder, setExpandedOrder] = useState(null);
-
+  const router = useRouter();
+  
   const filteredOrders = mockOrders.filter((order) => {
     const matchesFilter =
       selectedFilter === 'all' || order.status === selectedFilter;
@@ -563,7 +566,7 @@ function MyOrdersPageMobile() {
 
                     {/* Actions */}
                     <div className="flex gap-3 mb-6">
-                      <button className="flex-1 h-9 text-sm font-semibold bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-1.5">
+                      <button onClick={() => router.push(`/tracking/${order.id}`)} className="flex-1 h-9 text-sm font-semibold bg-primary text-white rounded-xl hover:bg-primary/90 transition-colors flex items-center justify-center gap-1.5">
                         <Eye size={14} />
                         View Details
                       </button>
