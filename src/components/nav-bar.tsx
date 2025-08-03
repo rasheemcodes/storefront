@@ -25,6 +25,7 @@ import {
 } from './ui/sheet';
 import { usePathname } from 'next/navigation';
 import CartSheet from './cartSheet';
+import { Input } from './ui/input';
 
 export default function NavBar() {
   const navRef = useRef<HTMLDivElement>(null);
@@ -274,10 +275,10 @@ export default function NavBar() {
           <div className="mb-6">
             <div className="flex items-center gap-x-2 mb-4">
               <Search className="h-4 w-4" />
-              <input
+              <Input
                 type="search"
                 placeholder="Search"
-                className="bg-white text-black border-b border-gray-400 w-full focus:outline-none"
+                className=" border-b border-gray-400 w-full focus:outline-none"
               />
             </div>
           </div>
@@ -349,10 +350,10 @@ export default function NavBar() {
               transition={{ duration: 0.3 }}
               className="absolute right-0"
             >
-              <input
+              <Input
                 type="search"
                 placeholder="Search products..."
-                className="w-full bg-white text-black border-b-2 border-gray-400 focus:border-primary focus:outline-none py-1 px-2 text-sm"
+                className="w-full  border-b-2 border-gray-400 focus:border-primary focus:outline-none "
                 onBlur={(e) => {
                   if (!e.target.value) setIsFocused(false);
                 }}
