@@ -278,7 +278,7 @@ export default function NavBar() {
               <Input
                 type="search"
                 placeholder="Search"
-                className=" border-b border-gray-400 w-full focus:outline-none"
+                className="bg-white text-black border-b border-gray-400 w-full focus:outline-none"
               />
             </div>
           </div>
@@ -353,7 +353,7 @@ export default function NavBar() {
               <Input
                 type="search"
                 placeholder="Search products..."
-                className="w-full  border-b-2 border-gray-400 focus:border-primary focus:outline-none "
+                className="w-full bg-white text-black border-b-2 border-gray-400 focus:border-primary focus:outline-none py-1 px-2 text-sm"
                 onBlur={(e) => {
                   if (!e.target.value) setIsFocused(false);
                 }}
