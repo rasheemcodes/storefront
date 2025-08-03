@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ProductCard from '../../_components/productCard'; // Import your ProductCard component
+import { Button } from '@/components/ui/button';
 
 // Sample luxury product data
 const luxuryProduct = {
@@ -334,13 +335,14 @@ export default function LuxuryProductPage() {
 
             {/* Add to Cart & Custom Appointment */}
             <div className="space-y-4">
-              <button
+              <Button
                 onClick={handleAddToCart}
                 disabled={!selectedSize}
-                className="w-full bg-gray-900 text-white py-4 px-8 text-lg font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                size={"lg"}
+                className="w-full  p-8 text-lg font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Add to Cart
-              </button>
+              </Button>
               
               <button
                 onClick={() => setShowAppointment(true)}
