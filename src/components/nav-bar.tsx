@@ -327,7 +327,7 @@ export default function NavBar() {
             <Button
               variant="ghost"
               size={'sm'}
-              className={`hover:text-gray-800 transition-all duration-300 ${
+              className={` transition-all duration-300 ${
                 isFocused ? 'opacity-0' : 'opacity-100'
               }`}
               onClick={() => setIsFocused(true)}
